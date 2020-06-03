@@ -370,7 +370,7 @@ void main_interface_image(int color1, int color2, int color3, int color4, int co
 
 	color_change(color3);
 	gotoxy(x + 10, y - 1);
-	printf("¢¾");
+	printf("¡Ú");
 	
 	color_change(color4);
 	gotoxy(x + 42, y - 2);
@@ -436,17 +436,11 @@ void main_interface_image(int color1, int color2, int color3, int color4, int co
 
 	color_change(color5);
 	gotoxy(x + 12, y - 5);
-	printf("¡á");
-	gotoxy(x + 14, y - 5);
-	printf("¡á");
-	gotoxy(x + 16, y - 5);
-	printf("¡á");
-	gotoxy(x + 18, y - 5);
-	printf("¡á");
-	gotoxy(x + 20, y - 5);
-	printf("¡á");
-	gotoxy(x + 22, y - 5);
-	printf("¡á");
-	gotoxy(x + 24, y - 5);
-	printf("¡á");
+	printf("¡ã¡ã¡ã¡ã¡ã¡ã¡ã¡ã");
+	gotoxy(x + 28, y - 4);
+	printf("¡ã¡ã");
+	gotoxy(x + 12, y + 5);
+	printf("¡å");
+	gotoxy(x + 14, y + 6);
+	printf("¡å¡å¡å¡å¡å¡å¡å¡å¡å");
 }

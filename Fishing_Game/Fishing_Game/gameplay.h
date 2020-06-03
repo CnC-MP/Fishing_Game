@@ -7,15 +7,23 @@
 #include "player_fish_image.h"
 
 void gamestart();
-void player_fish_image(int size, bool to_right, int x, int y, int color1, int color2, int color3, int color4);
 
 void gamestart() {
 	int temp;
 	hideCursor();
 	system("mode con:cols=150 lines=45");
+	int i = 1;
 	while (true) {
-		player_fish_image(17, true, 20, 8, 11, 12, 13, 14);
+		system("cls");
+		player_fish_image(i, false, 20, 8, 11, 12, 13, 14, 3);
 		//main_interface_write();
 		_getch();
+		if (i > 19) {
+			break;
+		}
+		else {
+			i++;
+		}
+		
 	}
 }
