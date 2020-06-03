@@ -128,6 +128,7 @@
     <ClInclude Include="interface_design_tool.h" />
     <ClInclude Include="location_struct.h" />
     <ClInclude Include="main_interface.h" />
+    <ClInclude Include="monster_fish_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fishing_game.cpp" />
