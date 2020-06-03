@@ -14,10 +14,10 @@ void test(int size, int x, int y) {
 
 int main() {
 	int temp;
-	scanf_s("%d", &temp);
+	/*scanf_s("%d", &temp);
 	system("cls");
 	test(temp, 0, 0);
-
+	*/
 
 	gamestart();
 	return 0;
