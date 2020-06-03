@@ -33,6 +33,12 @@
     <ClInclude Include="monster_fish_image.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="player_fish_image.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="player_struct.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fishing_game.cpp">

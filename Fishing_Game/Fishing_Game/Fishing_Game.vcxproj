@@ -129,6 +129,8 @@
     <ClInclude Include="location_struct.h" />
     <ClInclude Include="main_interface.h" />
     <ClInclude Include="monster_fish_image.h" />
+    <ClInclude Include="player_fish_image.h" />
+    <ClInclude Include="player_struct.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fishing_game.cpp" />

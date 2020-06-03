@@ -111,6 +111,83 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 			printf("бу");
 		}
 	}
+	else if (size == 7) {
+		y++;
+		if (to_right) {
+			gotoxy(x, y);
+			color_change(tail_color);
+			printf(">>");
+			color_change(body_color);
+			printf("бсбсв║");
+			gotoxy(x + 2, y - 1);
+			color_change(fin_color);
+			printf("бубу");
+		}
+		else {
+			gotoxy(x, y);
+			color_change(body_color);
+			printf("в╕бсбс");
+			color_change(tail_color);
+			printf("<<");
+			gotoxy(x + 2, y - 1);
+			color_change(fin_color);
+			printf("бубу");
+		}
+	}
+	else if (size == 8) {
+		y++;
+		if (to_right) {
+			gotoxy(x, y);
+			color_change(tail_color);
+			printf(">>");
+			color_change(body_color);
+			printf("бсбсв║");
+			gotoxy(x + 2, y - 1);
+			color_change(fin_color);
+			printf("бубу");
+			gotoxy(x + 4, y + 1);
+			printf("бх");
+		}
+		else {
+			gotoxy(x, y);
+			color_change(body_color);
+			printf("в╕бсбс");
+			color_change(tail_color);
+			printf("<<");
+			gotoxy(x + 2, y - 1);
+			color_change(fin_color);
+			printf("бубу");
+			gotoxy(x + 2, y + 1);
+			printf("бх");
+		}
+	}
+	else if (size == 8) {
+		y++;
+		if (to_right) {
+			gotoxy(x, y);
+			color_change(tail_color);
+			printf(">>");
+			color_change(body_color);
+			printf("бсбсв║");
+			gotoxy(x + 2, y - 1);
+			color_change(fin_color);
+			printf("бубу");
+			gotoxy(x + 4, y + 1);
+			printf("бх");
+		}
+		else {
+			gotoxy(x, y);
+			color_change(body_color);
+			printf("в╕бсбс");
+			color_change(tail_color);
+			printf("<<");
+			gotoxy(x + 2, y - 1);
+			color_change(fin_color);
+			printf("бубу");
+			gotoxy(x + 2, y + 1);
+			printf("бх");
+		}
+	}
 	else if (size == 1000000) {
 		if (to_right) {
 
