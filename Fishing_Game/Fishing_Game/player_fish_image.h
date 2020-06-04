@@ -6,7 +6,7 @@
 void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, int fin_color, int tail_color, int body_color, int eye_color);
 
 void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, int fin_color, int tail_color, int body_color, int eye_color) {
-	if (size == 1) {
+	if (size == 1) {		//size 2x1
 		if (to_right == 0) {
 			color_change(mouth_color);
 			gotoxy(x, y);
@@ -25,14 +25,33 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			printf("＜"); // 个 何盒
 		}
 	}
-	if (size == 2) {
+	if (size == 2) {	//size 2x1
+		if (to_right == 0) {
+			color_change(mouth_color);
+			gotoxy(x, y);
+			printf("⒑");
+			color_change(body_color);
+			gotoxy(x - 2, y);
+			printf(">>"); // 个 何盒
+		}
+		else
+		{
+			color_change(mouth_color);
+			gotoxy(x, y);
+			printf("⒏"); 
+			color_change(body_color);
+			gotoxy(x + 2, y);
+			printf("<<"); // 个 何盒
+		}
+	}
+	if (size == 3) {	//size 3x1
 		if (to_right == 0) {
 			color_change(mouth_color);
 			gotoxy(x, y);
 			printf("⒑");
 			color_change(body_color);
 			gotoxy(x - 4, y);
-			printf("＞＞"); // 个 何盒
+			printf(">>♂"); // 个 何盒
 		}
 		else
 		{
@@ -41,38 +60,19 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			printf("⒏"); 
 			color_change(body_color);
 			gotoxy(x + 2, y);
-			printf("＜＜"); // 个 何盒
+			printf("♂<<"); // 个 何盒
 		}
 	}
-	if (size == 3) {
+	if (size == 4) {	//size 3x2
 		if (to_right == 0) {
 			color_change(mouth_color);
 			gotoxy(x, y);
 			printf("⒑");
 			color_change(body_color);
-			gotoxy(x - 6, y);
-			printf("＞＞＞"); // 个 何盒
-		}
-		else
-		{
-			color_change(mouth_color);
-			gotoxy(x, y);
-			printf("⒏"); 
-			color_change(body_color);
-			gotoxy(x + 2, y);
-			printf("＜＜＜"); // 个 何盒
-		}
-	}
-	if (size == 4) {
-		if (to_right == 0) {
-			color_change(mouth_color);
-			gotoxy(x, y);
-			printf("⒑");
-			color_change(body_color);
-			gotoxy(x - 6, y);
-			printf("＞＞＞"); // 个 何盒
+			gotoxy(x - 4, y);
+			printf(">>♂"); // 个 何盒
 			color_change(fin_color);
-			gotoxy(x - 4, y - 1);
+			gotoxy(x - 2, y - 1);
 			printf("°");
 		}
 		else
@@ -82,48 +82,25 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			printf("⒏"); 
 			color_change(body_color);
 			gotoxy(x + 2, y);
-			printf("＜＜＜"); // 个 何盒
-			color_change(fin_color);
-			gotoxy(x + 4, y - 1);
-			printf("°");
-		}
-	}
-	if (size == 5) {
-		if (to_right == 0) {
-			color_change(mouth_color);
-			gotoxy(x, y);
-			printf("⒑");
-			color_change(body_color);
-			gotoxy(x - 6, y);
-			printf("＞＞＞"); // 个 何盒
-			color_change(fin_color);
-			gotoxy(x - 4, y - 1);
-			printf("°°");
-		}
-		else
-		{
-			color_change(mouth_color);
-			gotoxy(x, y);
-			printf("⒏"); 
-			color_change(body_color);
-			gotoxy(x + 2, y);
-			printf("＜＜＜"); // 个 何盒
+			printf("♂<<"); // 个 何盒
 			color_change(fin_color);
 			gotoxy(x + 2, y - 1);
-			printf("°°");
+			printf("°");
 		}
 	}
-	if (size == 6) {
+	if (size == 5) {	//size 3x3
 		if (to_right == 0) {
 			color_change(mouth_color);
 			gotoxy(x, y);
 			printf("⒑");
 			color_change(body_color);
-			gotoxy(x - 8, y);
-			printf("＞＞＞＞"); // 个 何盒
+			gotoxy(x - 4, y);
+			printf(">>♂"); // 个 何盒
 			color_change(fin_color);
-			gotoxy(x - 6, y - 1);
-			printf("°°°");
+			gotoxy(x - 2, y - 1);
+			printf("°");
+			gotoxy(x - 2, y + 1);
+			printf("″");
 		}
 		else
 		{
@@ -132,23 +109,27 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			printf("⒏");
 			color_change(body_color);
 			gotoxy(x + 2, y);
-			printf("＜＜＜＜"); // 个 何盒
+			printf("♂<<"); // 个 何盒
 			color_change(fin_color);
 			gotoxy(x + 2, y - 1);
-			printf("°°°");
+			printf("°");
+			gotoxy(x + 2, y + 1);
+			printf("″");
 		}
 	}
-	if (size == 7) {
+	if (size == 6) {	//size 4x3
 		if (to_right == 0) {
 			color_change(mouth_color);
 			gotoxy(x, y);
 			printf("⒑");
 			color_change(body_color);
-			gotoxy(x - 8, y);
-			printf("＞＞＞♂"); // 个 何盒
+			gotoxy(x - 6, y);
+			printf(">>♂♂"); // 个 何盒
 			color_change(fin_color);
-			gotoxy(x - 6, y - 1);
-			printf("°°°");
+			gotoxy(x - 4, y - 1);
+			printf("°°");
+			gotoxy(x - 4, y + 1);
+			printf("″″");
 		}
 		else
 		{
@@ -157,140 +138,458 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			printf("⒏"); 
 			color_change(body_color);
 			gotoxy(x + 2, y);
-			printf("♂＜＜＜"); // 个 何盒
+			printf("♂♂<<"); // 个 何盒
+			color_change(fin_color);
+			gotoxy(x + 2, y - 1);
+			printf("°°");
+			gotoxy(x + 2, y + 1);
+			printf("″″");
+		}
+	}
+	if (size == 7) {	//size 5x3
+		if (to_right == 0) {
+			color_change(mouth_color);
+			gotoxy(x, y);
+			printf("⒑");
+			color_change(body_color);
+			gotoxy(x - 6, y);
+			printf("♂♂♂"); // 个 何盒
+			color_change(fin_color);
+			gotoxy(x - 6, y - 1);
+			printf("°°°");
+			gotoxy(x - 6, y + 1);
+			printf("″″″");
+			color_change(tail_color);
+			gotoxy(x - 8, y);
+			printf(">>");
+		}
+		else
+		{
+			color_change(mouth_color);
+			gotoxy(x, y);
+			printf("⒏");
+			color_change(body_color);
+			gotoxy(x + 2, y);
+			printf("♂♂♂"); // 个 何盒
 			color_change(fin_color);
 			gotoxy(x + 2, y - 1);
 			printf("°°°");
+			gotoxy(x + 2, y + 1);
+			printf("″″″");
+			color_change(tail_color);
+			gotoxy(x + 8, y);
+			printf("<<");
 		}
 	}
 	if (size == 8) {
-		if (to_right == 0) {
+		if (to_right == 0) {  //size 6x4
 			color_change(mouth_color);
 			gotoxy(x, y);
 			printf("⒑");
-			color_change(body_color);
-			gotoxy(x - 8, y);
-			printf("＞＞♂♂"); // 个 何盒
-			color_change(fin_color);
-			gotoxy(x - 6, y - 1);
-			printf("°°°");
-		}
-		else
-		{
-			color_change(mouth_color);
-			gotoxy(x, y);
-			printf("⒏");
-			color_change(body_color);
-			gotoxy(x + 2, y);
-			printf("♂♂＜＜"); // 个 何盒
-			color_change(fin_color);
-			gotoxy(x + 2, y - 1);
-			printf("°°°");
-		}
-	}
-	if (size == 9) {
-		if (to_right == 0) {
-			color_change(mouth_color);
-			gotoxy(x, y);
+			gotoxy(x, y + 1);
 			printf("⒑");
 			color_change(body_color);
-			gotoxy(x - 8, y);
-			printf("＞♂♂♂"); // 个 何盒
+			gotoxy(x - 6, y);
+			printf("♂♂♂");
+			gotoxy(x - 6, y + 1);
+			printf("♂♂♂");// 个 何盒
 			color_change(fin_color);
 			gotoxy(x - 6, y - 1);
 			printf("°°°");
+			gotoxy(x - 6, y + 2);
+			printf("″″″");
+			color_change(tail_color);
+			gotoxy(x - 8, y);
+			printf("⒑");
+			gotoxy(x - 8, y + 1);
+			printf("⒑");
 		}
 		else
 		{
 			color_change(mouth_color);
 			gotoxy(x, y);
 			printf("⒏"); 
-			color_change(body_color);
-			gotoxy(x + 2, y);
-			printf("♂♂♂＜"); // 个 何盒
-			color_change(fin_color);
-			gotoxy(x + 2, y - 1);
-			printf("°°°");
-		}
-	}
-	if (size == 10) {
-		if (to_right == 0) {
-			color_change(mouth_color);
-			gotoxy(x, y);
-			printf("⒑");
-			color_change(body_color);
-			gotoxy(x - 8, y);
-			printf("♂♂♂♂"); // 个 何盒
-			color_change(fin_color);
-			gotoxy(x - 6, y - 1);
-			printf("°°°");
-		}
-		else
-		{
-			color_change(mouth_color);
-			gotoxy(x, y);
+			gotoxy(x, y + 1);
 			printf("⒏");
 			color_change(body_color);
 			gotoxy(x + 2, y);
-			printf("♂♂♂♂"); // 个 何盒
+			printf("♂♂♂"); 
+			gotoxy(x + 2, y + 1);
+			printf("♂♂♂"); // 个 何盒
 			color_change(fin_color);
 			gotoxy(x + 2, y - 1);
 			printf("°°°");
+			gotoxy(x + 2, y + 2);
+			printf("″″″");
+			color_change(tail_color);
+			gotoxy(x + 8, y);
+			printf("⒏");
+			gotoxy(x + 8, y + 1);
+			printf("⒏");
 		}
 	}
-	if (size == 11) {
+	if (size == 9) {	//size 6x4
 		if (to_right == 0) {
 			color_change(mouth_color);
 			gotoxy(x, y);
 			printf("⒑");
+			gotoxy(x, y + 1);
+			printf("⒑");
 			color_change(body_color);
 			gotoxy(x - 8, y);
-			printf("♂♂♂♂"); // 个 何盒
+			printf("♂♂♂♂"); 
+			gotoxy(x - 8, y + 1);
+			printf("♂♂♂♂");// 个 何盒
 			color_change(fin_color);
-			gotoxy(x - 6, y - 1);
+			gotoxy(x - 8, y - 1);
 			printf("°°°");
+			gotoxy(x - 8, y + 2);
+			printf("″″″");
 			color_change(tail_color);
 			gotoxy(x - 10, y);
 			printf("⒑");
+			gotoxy(x - 10, y + 1);
+			printf("⒑");
 		}
 		else
 		{
 			color_change(mouth_color);
 			gotoxy(x, y);
-			printf("⒏"); 
+			printf("⒏");
+			gotoxy(x, y + 1);
+			printf("⒏");
 			color_change(body_color);
 			gotoxy(x + 2, y);
-			printf("♂♂♂♂"); // 个 何盒
+			printf("♂♂♂♂");
+			gotoxy(x + 2, y + 1);
+			printf("♂♂♂♂");// 个 何盒
 			color_change(fin_color);
-			gotoxy(x + 2, y - 1);
+			gotoxy(x + 4, y - 1);
 			printf("°°°");
+			gotoxy(x + 4, y + 2);
+			printf("″″″");
 			color_change(tail_color);
 			gotoxy(x + 10, y);
 			printf("⒏");
+			gotoxy(x + 10, y + 1);
+			printf("⒏");
 		}
 	}
-	if (size == 12) {
+	if (size == 10) {	//size 6x5
+		if (to_right == 0) {
+			color_change(mouth_color);
+			gotoxy(x, y - 1);
+			printf("⒑");
+			gotoxy(x, y);
+			printf("| ");
+			gotoxy(x, y + 1);
+			printf("⒑");
+			color_change(body_color);
+			gotoxy(x - 8, y - 1);
+			printf("♂♂♂♂");
+			gotoxy(x - 8, y);
+			printf("♂♂♂♂");
+			gotoxy(x - 8, y + 1);
+			printf("♂♂♂♂");// 个 何盒
+			color_change(fin_color);
+			gotoxy(x - 8, y - 2);
+			printf("°°°");
+			gotoxy(x - 8, y + 2);
+			printf("″″″");
+			color_change(tail_color);
+			gotoxy(x - 10, y - 1);
+			printf("⒑");
+			gotoxy(x - 10, y);
+			printf("♂");
+			gotoxy(x - 10, y + 1);
+			printf("⒑");
+		}
+		else
+		{
+			color_change(mouth_color);
+			gotoxy(x, y - 1);
+			printf("⒏");
+			gotoxy(x, y);
+			printf(" |");
+			gotoxy(x, y + 1);
+			printf("⒏");
+			color_change(body_color);
+			gotoxy(x + 2, y - 1);
+			printf("♂♂♂♂");
+			gotoxy(x + 2, y);
+			printf("♂♂♂♂");
+			gotoxy(x + 2, y + 1);
+			printf("♂♂♂♂");// 个 何盒
+			color_change(fin_color);
+			gotoxy(x + 4, y - 2);
+			printf("°°°");
+			gotoxy(x + 4, y + 2);
+			printf("″″″");
+			color_change(tail_color);
+			gotoxy(x + 10, y - 1);
+			printf("⒏");
+			gotoxy(x + 10, y);
+			printf("♂");
+			gotoxy(x + 10, y + 1);
+			printf("⒏");
+		}
+	}
+	if (size == 11) {	 //size 7x5
+		if (to_right == 0) {
+			color_change(mouth_color);
+			gotoxy(x, y - 1);
+			printf("⒑");
+			gotoxy(x, y);
+			printf("| ");
+			gotoxy(x, y + 1);
+			printf("⒑");
+			color_change(body_color);
+			gotoxy(x - 8, y - 1);
+			printf("♂♂♂♂");
+			gotoxy(x - 8, y);
+			printf("♂♂♂♂");
+			gotoxy(x - 8, y + 1);
+			printf("♂♂♂♂");  
+			gotoxy(x - 10, y);
+			printf("♂");	// 个 何盒
+			color_change(fin_color);
+			gotoxy(x - 8, y - 2);
+			printf("°°°");
+			gotoxy(x - 8, y + 2);
+			printf("″″″");
+			gotoxy(x - 10, y - 1);
+			printf("°");
+			gotoxy(x - 10, y + 1);
+			printf("″");
+			color_change(tail_color);
+			gotoxy(x - 12, y - 1);
+			printf("⒑");
+			gotoxy(x - 12, y);
+			printf("♂");
+			gotoxy(x - 12, y + 1);
+			printf("⒑");
+		}
+		else
+		{
+			color_change(mouth_color);
+			gotoxy(x, y - 1);
+			printf("⒏");
+			gotoxy(x, y);
+			printf(" |");
+			gotoxy(x, y + 1);
+			printf("⒏");
+			color_change(body_color);
+			gotoxy(x + 2, y - 1);
+			printf("♂♂♂♂");
+			gotoxy(x + 2, y);
+			printf("♂♂♂♂");
+			gotoxy(x + 2, y + 1);
+			printf("♂♂♂♂"); 
+			gotoxy(x + 10, y);
+			printf("♂");	// 个 何盒
+			color_change(fin_color);
+			gotoxy(x + 4, y - 2);
+			printf("°°°");
+			gotoxy(x + 4, y + 2);
+			printf("″″″");
+			gotoxy(x + 10, y - 1);
+			printf("°");
+			gotoxy(x + 10, y + 1);
+			printf("″");
+			color_change(tail_color);
+			gotoxy(x + 12, y - 1);
+			printf("⒏");
+			gotoxy(x + 12, y);
+			printf("♂");
+			gotoxy(x + 12, y + 1);
+			printf("⒏");
+		}
+	}
+	if (size == 12) {	//size 8x5
+		if (to_right == 0) {
+			color_change(mouth_color);
+			gotoxy(x, y - 1);
+			printf("⒑");
+			gotoxy(x, y);
+			printf("| ");
+			gotoxy(x, y + 1);
+			printf("⒑");
+			color_change(body_color);
+			gotoxy(x - 8, y - 1);
+			printf("♂♂♂♂");
+			gotoxy(x - 8, y);
+			printf("♂♂♂♂");
+			gotoxy(x - 8, y + 1);
+			printf("♂♂♂♂");
+			gotoxy(x - 10, y);
+			printf("♂");	// 个 何盒
+			color_change(fin_color);
+			gotoxy(x - 8, y - 2);
+			printf("°°°");
+			gotoxy(x - 8, y + 2);
+			printf("″″″");
+			gotoxy(x - 10, y - 1);
+			printf("°");
+			gotoxy(x - 10, y + 1);
+			printf("″");
+			color_change(tail_color);
+			gotoxy(x - 12, y);
+			printf("⒑");
+			gotoxy(x - 14, y - 1);
+			printf("⒑");
+			gotoxy(x - 14, y);
+			printf("♂");
+			gotoxy(x - 14, y + 1);
+			printf("⒑");
+		}
+		else
+		{
+			color_change(mouth_color);
+			gotoxy(x, y - 1);
+			printf("⒏");
+			gotoxy(x, y);
+			printf(" |");
+			gotoxy(x, y + 1);
+			printf("⒏");
+			color_change(body_color);
+			gotoxy(x + 2, y - 1);
+			printf("♂♂♂♂");
+			gotoxy(x + 2, y);
+			printf("♂♂♂♂");
+			gotoxy(x + 2, y + 1);
+			printf("♂♂♂♂");
+			gotoxy(x + 10, y);
+			printf("♂");	// 个 何盒
+			color_change(fin_color);
+			gotoxy(x + 4, y - 2);
+			printf("°°°");
+			gotoxy(x + 4, y + 2);
+			printf("″″″");
+			gotoxy(x + 10, y - 1);
+			printf("°");
+			gotoxy(x + 10, y + 1);
+			printf("″");
+			color_change(tail_color);
+			gotoxy(x + 12, y);
+			printf("⒏");
+			gotoxy(x + 14, y - 1);
+			printf("⒏");
+			gotoxy(x + 14, y);
+			printf("♂");
+			gotoxy(x + 14, y + 1);
+			printf("⒏");
+		}
+	}
+	if (size == 13) {	//size 9x5
+		if (to_right == 0) {
+			color_change(mouth_color);
+			gotoxy(x, y - 1);
+			printf("⒑");
+			gotoxy(x, y);
+			printf("| ");
+			gotoxy(x, y + 1);
+			printf("⒑");
+			color_change(body_color);
+			gotoxy(x - 10, y - 1);
+			printf("♂♂♂♂♂");
+			gotoxy(x - 12, y);
+			printf("♂♂♂♂♂♂");
+			gotoxy(x - 10, y + 1);
+			printf("♂♂♂♂♂");	// 个 何盒
+			color_change(fin_color);
+			gotoxy(x - 10, y - 2);
+			printf("°°°°");
+			gotoxy(x - 10, y + 2);
+			printf("″″″″");
+			color_change(tail_color);
+			gotoxy(x - 14, y);
+			printf("⒑");
+			gotoxy(x - 16, y - 1);
+			printf("⒑");
+			gotoxy(x - 16, y);
+			printf("♂");
+			gotoxy(x - 16, y + 1);
+			printf("⒑");
+		}
+		else
+		{
+			color_change(mouth_color);
+			gotoxy(x, y - 1);
+			printf("⒏");
+			gotoxy(x, y);
+			printf(" |");
+			gotoxy(x, y + 1);
+			printf("⒏");
+			color_change(body_color);
+			gotoxy(x + 2, y - 1);
+			printf("♂♂♂♂♂");
+			gotoxy(x + 2, y);
+			printf("♂♂♂♂♂♂");
+			gotoxy(x + 2, y + 1);
+			printf("♂♂♂♂♂");
+			gotoxy(x + 12, y);
+			printf("♂");	// 个 何盒
+			color_change(fin_color);
+			gotoxy(x + 4, y - 2);
+			printf("°°°°");
+			gotoxy(x + 4, y + 2);
+			printf("″″″″");
+			color_change(tail_color);
+			gotoxy(x + 14, y);
+			printf("⒏");
+			gotoxy(x + 16, y - 1);
+			printf("⒏");
+			gotoxy(x + 16, y);
+			printf("♂");
+			gotoxy(x + 16, y + 1);
+			printf("⒏");
+		}
+	}
+	if (size == 14) { //size 9x6
 		if (to_right == 0) {
 			color_change(mouth_color);
 			gotoxy(x, y);
 			printf("⒑");
+			gotoxy(x, y + 1);
+			printf("| ");
+			gotoxy(x, y + 2);
+			printf("⒑");
 			color_change(body_color);
-			gotoxy(x - 8, y);
-			printf("♂♂♂♂"); // 个 何盒
+			gotoxy(x - 12, y - 1);
+			printf("♂♂♂♂♂♂");
+			gotoxy(x - 12, y);
+			printf("♂♂♂♂  ♂");
+			gotoxy(x - 12, y + 1);
+			printf("♂♂♂♂♂♂");
+			gotoxy(x - 12, y + 2);
+			printf("♂♂♂♂♂♂");	// 个 何盒
+			color_change(eye_color);
+			gotoxy(x - 4, y);
+			printf("≤");
 			color_change(fin_color);
-			gotoxy(x - 6, y - 1);
-			printf("°°°");
-			gotoxy(x - 2, y + 1);
-			printf("″");
+			gotoxy(x - 12, y - 2);
+			printf("°°°°");
+			gotoxy(x - 12, y + 3);
+			printf("″″″″");
 			color_change(tail_color);
-			gotoxy(x - 10, y);
+			gotoxy(x - 14, y);
+			printf("⒑");
+			gotoxy(x - 14, y + 1);
+			printf("⒑");
+			gotoxy(x - 16, y - 1);
+			printf("⒑");
+			gotoxy(x - 16, y);
+			printf("♂");
+			gotoxy(x - 16, y + 1);
+			printf("♂");
+			gotoxy(x - 16, y + 2);
 			printf("⒑");
 		}
 		else
 		{
 			color_change(mouth_color);
 			gotoxy(x, y);
-			printf("⒏");
+			printf("⒏"); 
 			color_change(body_color);
 			gotoxy(x + 2, y);
 			printf("♂♂♂♂"); // 个 何盒
@@ -298,48 +597,13 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			gotoxy(x + 2, y - 1);
 			printf("°°°");
 			gotoxy(x + 2, y + 1);
-			printf("″");
-			color_change(tail_color);
-			gotoxy(x + 10, y);
-			printf("⒏");
-		}
-	}
-	if (size == 13) {
-		if (to_right == 0) {
-			color_change(mouth_color);
-			gotoxy(x, y);
-			printf("⒑");
-			color_change(body_color);
-			gotoxy(x - 8, y);
-			printf("♂♂♂♂"); // 个 何盒
-			color_change(fin_color);
-			gotoxy(x - 6, y - 1);
-			printf("°°°");
-			gotoxy(x - 4, y + 1);
-			printf("″″");
-			color_change(tail_color);
-			gotoxy(x - 10, y);
-			printf("⒑");
-		}
-		else
-		{
-			color_change(mouth_color);
-			gotoxy(x, y);
-			printf("⒏"); 
-			color_change(body_color);
-			gotoxy(x + 2, y);
-			printf("♂♂♂♂"); // 个 何盒
-			color_change(fin_color);
-			gotoxy(x + 2, y - 1);
-			printf("°°°");
-			gotoxy(x + 2, y + 1);
 			printf("″″");
 			color_change(tail_color);
 			gotoxy(x + 10, y);
 			printf("⒏");
 		}
 	}
-		if (size == 14) {
+		if (size == 15) {
 			if (to_right == 0) {
 				color_change(mouth_color);
 				gotoxy(x, y);
@@ -386,7 +650,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 				printf("⒏");
 			}
 		}
-		if (size == 15) {
+		if (size == 16) {
 			if (to_right == 0) {
 				color_change(mouth_color);
 				gotoxy(x, y - 1);
