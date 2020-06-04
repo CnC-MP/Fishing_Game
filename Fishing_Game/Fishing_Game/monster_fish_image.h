@@ -712,7 +712,7 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 			printf("¢¸");
 		}
 	}
-	else if (size == 22) {
+	else if (size == 18) {
 		y++;
 		if (to_right) {
 			gotoxy(x, y);
@@ -787,7 +787,7 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 			printf("¢¸");
 		}
 	}
-	else if (size == 23) {
+	else if (size == 19) {
 		y++;
 		if (to_right) {
 			gotoxy(x, y);
@@ -870,7 +870,7 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 			printf("¢¸");
 		}
 	}
-	else if (size == 24) {
+	else if (size == 20) {
 		y++;
 		if (to_right) {
 			gotoxy(x, y);
@@ -953,7 +953,7 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 			printf("¢¸");
 		}
 	}
-	else if (size == 25) {
+	else if (size == 21) {
 		y++;
 		if (to_right) {
 			gotoxy(x, y);
@@ -1028,7 +1028,7 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 			printf("¢¸");
 		}
 	}
-	else if (size == 26) {
+	else if (size == 22) {
 		y++;
 		if (to_right) {
 			gotoxy(x, y);
@@ -1103,7 +1103,7 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 			printf("¢¸");
 		}
 	}
-	else if (size == 27) {
+	else if (size == 23) {
 		y++;
 		if (to_right) {
 			gotoxy(x, y);
