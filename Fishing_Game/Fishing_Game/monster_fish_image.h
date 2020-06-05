@@ -4,7 +4,7 @@
 #include <cstdio>
 
 void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_color, int tail_color, int fin_color, int eye_color);
-void monster_fish_image_type02(int size, bool to_right, int x, int y, int body_color, int tail_color);
+void monster_fish_image_type02(int size, bool to_right, int x, int y, int body_color, int tail_color, int fin_color, int eye_color);
 
 void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_color, int tail_color, int fin_color, int eye_color) {
 	if (size == 1) {
@@ -2343,6 +2343,110 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 			printf("¢¸¡á¡á");
 			gotoxy(x + 42, y + 8);
 			printf("¢¸¡á");
+		}
+	}
+	color_change(7);
+}
+
+
+void monster_fish_image_type02(int size, bool to_right, int x, int y, int body_color, int tail_color, int fin_color, int eye_color) {
+	if (size == 1) {
+		gotoxy(x, y);
+		color_change(body_color);
+		if (to_right) {
+			printf("¢º");
+		}
+		else {
+			printf("¢¸");
+		}
+	}
+	else if (size == 2) {
+		gotoxy(x, y);
+		color_change(body_color);
+		if (to_right) {
+			printf("¡á¢º");
+		}
+		else {
+			printf("¢¸¡á");
+		}
+	}
+	else if (size == 3) {
+		gotoxy(x, y);
+		color_change(body_color);
+		if (to_right) {
+			printf("¡á¡á¢º");
+		}
+		else {
+			printf("¢¸¡á¡á");
+		}
+	}
+	else if (size == 4) {
+		gotoxy(x, y);
+		color_change(body_color);
+		if (to_right) {
+			printf("¡á¡á¡á¢º");
+		}
+		else {
+			printf("¢¸¡á¡á¡á");
+		}
+	}
+	else if (size == 5) {
+		gotoxy(x, y);
+		color_change(body_color);
+		if (to_right) {
+			printf("¡á¡á¡á¡á¢º");
+		}
+		else {
+			printf("¢¸¡á¡á¡á¡á");
+		}
+	}
+	else if (size == 6) {
+		gotoxy(x + 2, y);
+		color_change(fin_color);
+		printf("¡ã¡ã¡ã");
+		gotoxy(x, y + 1);
+		color_change(body_color);
+		if (to_right) {
+			printf("¡á¡á¡á¡á¢º");
+		}
+		else {
+			printf("¢¸¡á¡á¡á¡á");
+		}
+	}
+	else if (size == 7) {
+		if (to_right) {
+			gotoxy(x + 4, y);
+			color_change(fin_color);
+			printf("¡ã¡ã¡ã");
+			color_change(body_color);
+			gotoxy(x, y + 1);
+			printf("¢¸¡á¡á¡á¡á¢º");
+		}
+		else {
+			gotoxy(x + 2, y);
+			color_change(fin_color);
+			printf("¡ã¡ã¡ã");
+			color_change(body_color);
+			gotoxy(x, y + 1);
+			printf("¢¸¡á¡á¡á¡á¢º");
+		}
+	}
+	else if (size == 8) {
+		if (to_right) {
+			gotoxy(x + 6, y);
+			color_change(fin_color);
+			printf("¡ã¡ã¡ã");
+			color_change(body_color);
+			gotoxy(x, y + 1);
+			printf("¢¸¡á¡á¡á¡á¡á¢º");
+		}
+		else {
+			gotoxy(x + 2, y);
+			color_change(fin_color);
+			printf("¡ã¡ã¡ã");
+			color_change(body_color);
+			gotoxy(x, y + 1);
+			printf("¢¸¡á¡á¡á¡á¡á¢º");
 		}
 	}
 	color_change(7);
