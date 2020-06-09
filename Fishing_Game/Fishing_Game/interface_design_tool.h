@@ -10,10 +10,13 @@
 
 int temp_interface_design_fuction = 0;
 int temp2_interface_design_fuction = 0;
+int xlimit;
+int ylimit;
 
 
 int wsleep(int* milliseconds, int* result);
 void gotoxy(int x, int y); //커서를 x, y 좌표로 이동
+void gotoxylimit(int x, int y, const char e[3]); //커서를 x, y 좌표로 이동
 void horizontal(int a, int b, int c, int d, const char e[3]); //e를 (a,b)에서 d번째 마다 c번 가로줄을 입력 
 void vertical(int a, int b, int c, int d, const char e[3]); //e를 (a,b)에서 d번째 마다 c번 세로줄을 입력 
 void diagonal_left(int a, int b, int c, int d, const char e[3]); //e를 (a,b)에서 d번째 마다 c번 왼쪽 대각선을 입력 
@@ -49,7 +52,14 @@ void color_change(int a); //글자 색 바꾸기
 
 				//*************************************************************************
 
-
+void gotoxylimit(int x, int y, const char e[3]) {
+	if (x >= 0 && x <= xlimit) {
+		if (y >= 0 && y <= ylimit) {
+			gotoxy(x, y);
+			printf("%s", e);
+		}
+	}
+}
 
 int wsleep(int* milliseconds, int* result)
 {
