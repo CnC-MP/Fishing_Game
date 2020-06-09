@@ -18,7 +18,7 @@ void gamestart() {
 		player_fish_image(i, true, 20, 8, 11, 12, 13, 14, 3);
 		//main_interface_write();
 		_getch();
-		if (i > 19) {
+		if (i > 24) {
 			break;
 		}
 		else {
