@@ -13,16 +13,20 @@ void gamestart() {
 	hideCursor();
 	system("mode con:cols=150 lines=45");
 	int i = 1;
+	int z = 1;
 	while (true) {
 		system("cls");
-		player_fish_image(i, true, 20, 8, 11, 12, 13, 14, 3);
+		player_fish_image(i, false, 20, 8, 11, 12, 13, 14, 3);
 		//main_interface_write();
 		_getch();
 		if (i > 24) {
 			break;
 		}
 		else {
+			gotoxy(30, 30);
+			printf("%d", z);
 			i++;
+			z++;
 		}
 		
 	}
