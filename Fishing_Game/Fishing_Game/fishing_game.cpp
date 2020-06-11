@@ -38,9 +38,9 @@ int main() {
 	ylimit = 44;
 	scanf_s("%d", &temp);
 	system("cls");
-	test2(temp, 0, 0);
+	test1(temp, 0, 0);
 	for (int i = 1; i <= temp; i++) {
-		test2(i, 0, 0);
+		test1(i, 0, 0);
 	}
 	gamestart();
 	return 0;
