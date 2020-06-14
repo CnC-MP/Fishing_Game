@@ -16,10 +16,10 @@ void gamestart() {
 	int z = 1;
 	while (true) {
 		system("cls");
-		player_fish_image(i, false, 20, 8, 11, 12, 13, 14, 3);
+		player_fish_image(i, false, 40, 8, 11, 12, 13, 14, 3);
 		//main_interface_write();
 		_getch();
-		if (i > 24) {
+		if (i > 36) {
 			break;
 		}
 		else {
