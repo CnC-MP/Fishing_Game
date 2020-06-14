@@ -2,10 +2,13 @@
 
 #include "interface_design_tool.h"
 #include <cstdio>
+#include <cmath>
 
 void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_color, int tail_color, int fin_color, int eye_color);
 void monster_fish_image_type02(int size, bool to_right, int x, int y, int body_color, int tail_color, int fin_color, int eye_color);
 void gotoxylimit_hori(int x, int y, const char s[3], int num);
+void monstermonster_fish_image_type02_helper01(int size, bool to_right, int x, int y, int body_color, int fin_color);
+void monstermonster_fish_image_type02_helper02(int size, bool to_right, int x, int y, int body_color, int fin_color);
 
 
 void gotoxylimit_hori(int x, int y, const char s[3], int num) {
@@ -1716,232 +1719,157 @@ void monster_fish_image_type01(int size, bool to_right, int x, int y, int body_c
 	color_change(7);
 }
 
+void monstermonster_fish_image_type02_helper01(int size, bool to_right, int x, int y, int body_color, int fin_color) {
+	double front_per = 0.08;
+	double end_per = 0.8;
+	int length = size - 3;
+	int start = (int)floor(front_per * length);
+	int end = (int)ceil(length * (end_per - front_per));
+	if (to_right) {
+		color_change(fin_color);
+		gotoxylimit_hori(x + 2 + 2 * length - 2 * end, y, "бу", end - start);
+		color_change(body_color);
+		gotoxylimit_hori(x + 2, y + 1, "бс", length);
+		gotoxylimit(x, y + 1, "в╕");
+		gotoxylimit(x + 2 * length + 2, y + 1, "в║");
+	}
+	else {
+		color_change(fin_color);
+		gotoxylimit_hori(x + 2 + 2 * start, y, "бу", end - start);
+		color_change(body_color);
+		gotoxylimit_hori(x + 2, y + 1, "бс", length);
+		gotoxylimit(x, y + 1, "в╕");
+		gotoxylimit(x + 2 * length + 2, y + 1, "в║");
+	}
+
+}
+
+void monstermonster_fish_image_type02_helper02(int size, bool to_right, int x, int y, int body_color, int fin_color) {
+	double front_per = 0.08;
+	double end_per = 0.8;
+	double upper = 0.53;
+	double lower = 0.72;
+	int length = size - 4;
+	int start = (int)floor(front_per * length);
+	int end = (int)ceil(length * (end_per - front_per));
+	int upper_length = (int)round(upper * length);
+	int lower_length = (int)round(lower * length);
+	if (to_right) {
+		
+		color_change(fin_color);
+		gotoxylimit_hori(x + 2 * (length - upper_length) + 2, y, "бу", upper_length - start);
+		gotoxylimit_hori(x + 2 + 2 * length - 2 * end, y + 1, "бу", end - upper_length);
+		color_change(body_color);
+		gotoxylimit_hori(x + 2 * (length - upper_length) + 2, y + 1, "бс", upper_length);
+		gotoxylimit_hori(x + 2, y + 2, "бс", lower_length);
+		gotoxylimit(x + 2 * length + 2, y + 1, "в║");
+		gotoxylimit(x, y + 2, "в╕");
+
+	}
+	else {
+		color_change(fin_color);
+		gotoxylimit_hori(x + 2 + 2 * start, y, "бу", upper_length - start);
+		gotoxylimit_hori(x + 2 + 2 * upper_length, y + 1, "бу", end - upper_length);
+		color_change(body_color);
+		gotoxylimit_hori(x + 2, y + 1, "бс", upper_length);
+		gotoxylimit_hori(x + 2 * (length - lower_length) + 2, y + 2, "бс", lower_length);
+		gotoxylimit(x, y + 1, "в╕");
+		gotoxylimit(x + 2 * length + 2, y + 2, "в║");
+	}
+}
 
 void monster_fish_image_type02(int size, bool to_right, int x, int y, int body_color, int tail_color, int fin_color, int eye_color) {
 	if (size == 1) {
-		gotoxy(x, y);
 		color_change(body_color);
 		if (to_right) {
-			printf("в║");
+			gotoxylimit(x, y, "в║");
 		}
 		else {
-			printf("в╕");
+			gotoxylimit(x, y, "в╕");
 		}
 	}
 	else if (size == 2) {
-		gotoxy(x, y);
 		color_change(body_color);
 		if (to_right) {
-			printf("бсв║");
+			gotoxylimit(x, y, "бс");
+			gotoxylimit(x + 2, y, "в║");
 		}
 		else {
-			printf("в╕бс");
+			gotoxylimit(x, y, "в╕");
+			gotoxylimit(x + 2, y, "бс");
 		}
 	}
 	else if (size == 3) {
-		gotoxy(x, y);
 		color_change(body_color);
 		if (to_right) {
-			printf("бсбсв║");
+			gotoxylimit(x, y, "бс");
+			gotoxylimit(x + 2, y, "бс");
+			gotoxylimit(x + 4, y, "в║");
 		}
 		else {
-			printf("в╕бсбс");
+			gotoxylimit(x, y, "в╕");
+			gotoxylimit(x + 2, y, "бс");
+			gotoxylimit(x + 4, y, "бс");
 		}
 	}
 	else if (size == 4) {
-		gotoxy(x, y);
 		color_change(body_color);
 		if (to_right) {
-			printf("бсбсбсв║");
+			gotoxylimit(x, y, "бс");
+			gotoxylimit(x + 2, y, "бс");
+			gotoxylimit(x + 4, y, "бс");
+			gotoxylimit(x + 6, y, "в║");
 		}
 		else {
-			printf("в╕бсбсбс");
+			gotoxylimit(x, y, "в╕");
+			gotoxylimit(x + 2, y, "бс");
+			gotoxylimit(x + 4, y, "бс");
+			gotoxylimit(x + 6, y, "бс");
 		}
 	}
 	else if (size == 5) {
-		gotoxy(x, y);
 		color_change(body_color);
 		if (to_right) {
-			printf("бсбсбсбсв║");
+			gotoxylimit(x, y, "бс");
+			gotoxylimit(x + 2, y, "бс");
+			gotoxylimit(x + 4, y, "бс");
+			gotoxylimit(x + 6, y, "бс");
+			gotoxylimit(x + 8, y, "в║");
 		}
 		else {
-			printf("в╕бсбсбсбс");
+			gotoxylimit(x, y, "в╕");
+			gotoxylimit(x + 2, y, "бс");
+			gotoxylimit(x + 4, y, "бс");
+			gotoxylimit(x + 6, y, "бс");
+			gotoxylimit(x + 8, y, "бс");
 		}
 	}
 	else if (size == 6) {
-		gotoxy(x + 2, y);
 		color_change(fin_color);
-		printf("бубубу");
-		gotoxy(x, y + 1);
+		gotoxylimit(x + 2, y, "бу");
+		gotoxylimit(x + 4, y, "бу");
+		gotoxylimit(x + 6, y, "бу");
 		color_change(body_color);
 		if (to_right) {
-			printf("бсбсбсбсв║");
+			gotoxylimit(x, y + 1, "бс");
+			gotoxylimit(x + 2, y + 1, "бс");
+			gotoxylimit(x + 4, y + 1, "бс");
+			gotoxylimit(x + 6, y + 1, "бс");
+			gotoxylimit(x + 8, y + 1, "в║");
 		}
 		else {
-			printf("в╕бсбсбсбс");
+			gotoxylimit(x, y + 1, "в╕");
+			gotoxylimit(x + 2, y + 1, "бс");
+			gotoxylimit(x + 4, y + 1, "бс");
+			gotoxylimit(x + 6, y + 1, "бс");
+			gotoxylimit(x + 8, y + 1, "бс");
 		}
 	}
-	else if (size == 7) {
-		if (to_right) {
-			gotoxy(x + 4, y);
-			color_change(fin_color);
-			printf("бубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсв║");
-		}
+	else if (size <= 22) {
+		monstermonster_fish_image_type02_helper01(size, to_right, x, y, body_color, fin_color);
 	}
-	else if (size == 8) {
-		if (to_right) {
-			gotoxy(x + 6, y);
-			color_change(fin_color);
-			printf("бубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсв║");
-		}
-	}
-	else if (size == 9) {
-		if (to_right) {
-			gotoxy(x + 6, y);
-			color_change(fin_color);
-			printf("бубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсв║");
-		}
-	}
-	else if (size == 10) {
-		if (to_right) {
-			gotoxy(x + 6, y);
-			color_change(fin_color);
-			printf("бубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсв║");
-		}
-	}
-	else if (size == 11) {
-		if (to_right) {
-			gotoxy(x + 6, y);
-			color_change(fin_color);
-			printf("бубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсв║");
-		}
-	}
-	else if (size == 12) {
-		if (to_right) {
-			gotoxy(x + 6, y);
-			color_change(fin_color);
-			printf("бубубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсбсв║");
-		}
-	}
-	else if (size == 13) {
-		if (to_right) {
-			gotoxy(x + 8, y);
-			color_change(fin_color);
-			printf("бубубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсбсбсв║");
-		}
-	}
-	else if (size == 14) {
-		if (to_right) {
-			gotoxy(x + 10, y);
-			color_change(fin_color);
-			printf("бубубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсбсбсбсв║");
-		}
-	}
-	else if (size == 15) {
-		if (to_right) {
-			gotoxy(x + 12, y);
-			color_change(fin_color);
-			printf("бубубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсбсбсбсбсв║");
-		}
-		else {
-			gotoxy(x + 2, y);
-			color_change(fin_color);
-			printf("бубубубубубубу");
-			color_change(body_color);
-			gotoxy(x, y + 1);
-			printf("в╕бсбсбсбсбсбсбсбсбсбсбсбсв║");
-		}
+	else {
+		monstermonster_fish_image_type02_helper02(size, to_right, x, y, body_color, fin_color);
 	}
 	color_change(7);
 }
