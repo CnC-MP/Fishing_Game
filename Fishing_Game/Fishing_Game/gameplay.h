@@ -18,7 +18,7 @@ void gamestart() {
 		system("cls");
 		player_fish_image(i, true, 40, 8, 11, 12, 13, 14, 3);
 		//main_interface_write();
-		_getch();
+		int temp = _getch();
 		if (i > 36) {
 			break;
 		}
