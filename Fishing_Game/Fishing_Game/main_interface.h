@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdlib>
-
+#include "player_fish_image.h"
 #include "interface_design_tool.h"
 
 void main_interface_write();
@@ -435,12 +435,8 @@ void main_interface_image(int color1, int color2, int color3, int color4, int co
 	printf("¡á");
 
 	color_change(color5);
-	gotoxy(x + 12, y - 5);
-	printf("¡ã¡ã¡ã¡ã¡ã¡ã¡ã¡ã");
-	gotoxy(x + 28, y - 4);
-	printf("¡ã¡ã");
-	gotoxy(x + 12, y + 5);
-	printf("¡å");
-	gotoxy(x + 14, y + 6);
-	printf("¡å¡å¡å¡å¡å¡å¡å¡å¡å");
+	/*gotoxylimit_line(x + 12, y - 5, "¡ã", 8);
+	gotoxylimit_line(x + 28, y - 4, "¡ã", 2);
+	gotoxylimit_line(x + 12, y + 5, "¡å", 1);
+	gotoxylimit_line(x + 14, y + 6, "¡ã", 9);*/
 }
