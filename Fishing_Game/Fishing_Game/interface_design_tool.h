@@ -52,7 +52,7 @@ void color_change(int a); //글자 색 바꾸기
 
 				//*************************************************************************
 
-void _line(int x, int y, const char e[3]) {
+void gotoxylimit(int x, int y, const char e[3]) {
 	if (x >= 0 && x <= xlimit) {
 		if (y >= 0 && y <= ylimit) {
 			gotoxy(x, y);
