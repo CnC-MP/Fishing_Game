@@ -2537,6 +2537,10 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 				gotoxylimit(x + 28, y + 8, "в╕");
 			}
 		}
+		if (size == 37) {
+			if(to_right == 0)
+			ending_image(x, y, 11, 12, 13, 14, 15);
+		}
 }
 
 void ending_image(int x, int y, int color1, int color2, int color3, int color4, int color5) {
@@ -2551,6 +2555,7 @@ void ending_image(int x, int y, int color1, int color2, int color3, int color4, 
 	gotoxylimit(x + 30, y - 2, "бс");
 	gotoxylimit_line(x + 36, y - 2, "бс", 2);
 	gotoxylimit(x, y - 1, "бс");
+	gotoxylimit(x + 16, y - 1, "бс");
 	gotoxylimit(x + 18, y - 1, "бс");
 	gotoxylimit(x + 22, y - 1, "бс");
 	gotoxylimit(x + 26, y - 1, "бс");
@@ -2638,5 +2643,5 @@ void ending_image(int x, int y, int color1, int color2, int color3, int color4, 
 	gotoxylimit_line(x + 12, y - 5, "бу", 8);
 	gotoxylimit_line(x + 28, y - 4, "бу", 2);
 	gotoxylimit_line(x + 12, y + 5, "бх", 1);
-	gotoxylimit_line(x + 14, y + 6, "бу", 9);
+	gotoxylimit_line(x + 14, y + 6, "бх", 9);
 }
