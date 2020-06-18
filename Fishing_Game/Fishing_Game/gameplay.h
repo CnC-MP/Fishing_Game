@@ -32,17 +32,17 @@ void gamestart() {
 		main_interface_write02();
 		main_interface_cursor_write(mainmenu_cursor, 12);
 		main_interface_cursor(&mainmenu_cursor);
-			if (enter_key == 13 && mainmenu_cursor.yPos == 0) { //새로하기
-				difficulty_interface();
-			}
-			else if (enter_key == 13 && mainmenu_cursor.yPos == 1) { //이어하기
+		if (enter_key == 13 && mainmenu_cursor.yPos == 0) { //새로하기
+			difficulty_interface();
+		}
+		else if (enter_key == 13 && mainmenu_cursor.yPos == 1) { //이어하기
 			
-			}
-			else if (enter_key == 13 && mainmenu_cursor.yPos == 2) { //종료하기
+		}
+		else if (enter_key == 13 && mainmenu_cursor.yPos == 2) { //종료하기
 
-			}
 		}
 	}
+}
 
 void main_interface_cursor(cursor_location* loc) {
 	vertical_cursor_reverse(loc, 0, 2, 1, 1, 0);
