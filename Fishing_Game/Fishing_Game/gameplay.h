@@ -18,9 +18,12 @@ void gamestart() {
 		system("cls");
 		main_interface_write();
 		int temp = _getch();
-		if (temp == 13) {
-			gotoxy(55, 10);
-			printf("상                   중                   하");
+		while (true) {
+			system("cls");
+			if (temp == 13) {
+				gotoxy(51, 10);
+				printf("상                   중                   하");
+			}
 		}
 		/*if (i > 37) {
 			break;
