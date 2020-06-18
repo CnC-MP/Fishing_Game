@@ -14,12 +14,6 @@ void main_interface_write() {
 	int color4 = 14;
 	int color5 = 15;
 	main_interface_image(color1, color2, color3, color4, color5);
-	gotoxy(71, 30);
-	color_change(14);		//150 45  중간 75 22
-	printf("게임  시작\n");
-	color_change(7);
-	gotoxy(65, 35);
-	printf("Enter키를   누르시오.\n");
 }
 void main_interface_image(int color1, int color2, int color3, int color4, int color5) {
 	color_change(color1);  //4: 빨간색 6: 노란색 0: 검은색 12: 연한 빨간색

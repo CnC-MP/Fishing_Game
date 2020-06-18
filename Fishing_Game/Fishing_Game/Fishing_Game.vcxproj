@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="cursor_status.h" />
     <ClInclude Include="gameplay.h" />
+    <ClInclude Include="gotoxy_calc.h" />
     <ClInclude Include="interface_design_tool.h" />
     <ClInclude Include="location_struct.h" />
     <ClInclude Include="main_interface.h" />

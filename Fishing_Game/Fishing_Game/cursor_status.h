@@ -19,6 +19,7 @@ int close_key = 0;
 void hideCursor();
 void showCursor();
 void vertical_cursor(cursor_location* loc, int y_min, int y_max, int y_diff, int enter, int close);
+void vertical_cursor_reverse(cursor_location* loc, int y_min, int y_max, int y_diff, int enter, int close);
 void horizontal_cursor(cursor_location* loc, int x_min, int x_max, int x_diff, int enter, int close);
 void ver_hori_cursor(cursor_location* loc, int x_min, int x_max, int x_diff, int y_min, int y_max, int y_diff, int enter, int close);
 
@@ -52,6 +53,39 @@ void vertical_cursor(cursor_location* loc, int y_min, int y_max, int y_diff, int
 
 	case 'w':
 	case 'W':
+		loc->yPos += y_diff;
+		if (loc->yPos > y_max)
+			loc->yPos = y_min;
+		break;
+
+	case 13:
+		enter_key = 13;
+		if (enter == 0)
+			enter_key = 0;
+		break;
+
+	case 8:
+		close_key = 8;
+		if (close == 0)
+			close_key = 0;
+		break;
+	}
+}
+
+void vertical_cursor_reverse(cursor_location* loc, int y_min, int y_max, int y_diff, int enter, int close)
+{
+	int menumove = _getch();
+	switch (menumove)
+	{
+	case 'w':
+	case 'W':
+		loc->yPos -= y_diff;
+		if (loc->yPos < y_min)
+			loc->yPos = y_max;
+		break;
+
+	case 's':
+	case 'S':
 		loc->yPos += y_diff;
 		if (loc->yPos > y_max)
 			loc->yPos = y_min;
