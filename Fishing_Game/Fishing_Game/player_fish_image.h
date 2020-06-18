@@ -2539,10 +2539,9 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 37) {
 			if(to_right == 0)
-			ending_image(x, y, 11, 12, 13, 14, 15);
+			ending_image(x, y, 8, 9, 10, 11, 12);
 		}
 }
-
 void ending_image(int x, int y, int color1, int color2, int color3, int color4, int color5) {
 	y += 5;
 	gotoxylimit_line(x + 10, y - 4, "бс", 9);

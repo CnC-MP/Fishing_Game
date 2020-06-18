@@ -8,11 +8,11 @@ void main_interface_image(int color1, int color2, int color3, int color4, int co
 
 void main_interface_write() {
 	system("cls");
-	int color1 = 12;
-	int color2 = 14;
+	int color1 = 11;
+	int color2 = 12;
 	int color3 = 13;
-	int color4 = 11;
-	int color5 = 11;
+	int color4 = 14;
+	int color5 = 15;
 	main_interface_image(color1, color2, color3, color4, color5);
 	gotoxy(71, 30);
 	color_change(14);		//150 45  Áß°£ 75 22
