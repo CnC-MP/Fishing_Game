@@ -2,23 +2,18 @@
 #include <cstdlib>
 #include "player_fish_image.h"
 #include "interface_design_tool.h"
+#include "gameplay.h"
 
-void main_interface_write();
+void main_interface_write01();
 void main_interface_image(int color1, int color2, int color3, int color4, int color5);
 
-void main_interface_write() {
-	system("cls");
-	int color1 = 11;
-	int color2 = 12;
-	int color3 = 13;
-	int color4 = 14;
-	int color5 = 15;
-	main_interface_image(color1, color2, color3, color4, color5);
+void main_interface_write01() {
+	main_interface_image(11, 12, 13, 14, 15);
 }
 void main_interface_image(int color1, int color2, int color3, int color4, int color5) {
 	color_change(color1);  //4: 빨간색 6: 노란색 0: 검은색 12: 연한 빨간색
-	int x = 0, y = 0;
-	y += 5;
+	int x = 50, y = 0;
+	y += 17;
 	gotoxylimit_line(x + 10, y - 4, "■", 9);
 	gotoxylimit_line(x + 6, y - 3, "■", 2);
 	gotoxylimit(x + 16, y - 3, "■");
