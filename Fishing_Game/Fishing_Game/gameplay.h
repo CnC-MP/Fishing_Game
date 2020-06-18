@@ -32,6 +32,15 @@ void gamestart() {
 		}	
 		main_interface_cursor_write(mainmenu_cursor, 12);
 		main_interface_cursor(&mainmenu_cursor);
+		if (enter_key == 13 && mainmenu_cursor.yPos == 0) {
+
+		}
+		else if (enter_key == 13 && mainmenu_cursor.yPos == 1) {
+
+		}
+		else if (enter_key == 13 && mainmenu_cursor.yPos == 2) {
+
+		}
 	}
 }
 
