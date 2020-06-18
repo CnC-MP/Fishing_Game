@@ -1,10 +1,10 @@
-#include <cstdio>
-#include <cstdlib>
-#include <conio.h>
+//#include <cstdio>
+//#include <cstdlib>
+//#include <conio.h>
 #include "gameplay.h"
-#include "monster_fish_image.h"
-#include "interface_design_tool.h"
-
+//#include "monster_fish_image.h"
+//#include "interface_design_tool.h"
+/*
 void test1(int size, int x, int y) {
 	system("cls");
 	monster_fish_image_type01(size, true, x, y, 11, 13, 12, 4);
@@ -30,10 +30,12 @@ void test2(int size, int x, int y) {
 	printf("%d", size);
 	temp = _getch();
 }
+*/
 
 int main() {
-	int temp;
-	system("mode con:cols=150 lines=45");
+	//int temp;
+	//system("mode con:cols=150 lines=45");
+	/*
 	xlimit = 148;
 	ylimit = 44;
 	scanf_s("%d", &temp);
@@ -42,6 +44,7 @@ int main() {
 	for (int i = 1; i <= temp; i++) {
 		test2(i, 0, 0);
 	}
+	*/
 	gamestart();
 	return 0;
 }
