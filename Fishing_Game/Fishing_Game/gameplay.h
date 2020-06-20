@@ -39,7 +39,8 @@ void gamestart() {
 			
 		}
 		else if (enter_key == 13 && mainmenu_cursor.yPos == 2) { //종료하기
-
+			system("cls");
+			exit(1);
 		}
 	}
 }
@@ -101,5 +102,24 @@ void difficulty_interface() {
 		difficulty_interface_write();
 		difficulty_interface_cursor_write(difficulty_cursor, 12);
 		difficulty_interface_cursor(&difficulty_cursor);
+		if (enter_key == 13 && difficulty_cursor.xPos == 0) { // 하
+			while (true) {
+				system("cls");
+				printf("ㅇ");
+				// 난이도 하 게임 플레이
+			}
+		}
+		else if (enter_key == 13 && difficulty_cursor.xPos == 1) { // 중
+			while (true) {
+				system("cls");
+				// 난이도 중 게임 플레이
+			}
+		}
+		else if (enter_key == 13 && difficulty_cursor.xPos == 2) { // 상
+			while (true) {
+				system("cls");
+				// 난이도 상 게임 플레이
+			}
+		}
 	}
 }
