@@ -13,7 +13,7 @@ void main_interface_write01() {
 void main_interface_image(int color1, int color2, int color3, int color4, int color5) {
 	color_change(color1);  //4: 빨간색 6: 노란색 0: 검은색 12: 연한 빨간색
 	int x = 50, y = 0;
-	y += 17;
+	y += 20;
 	gotoxylimit_line(x + 10, y - 4, "■", 9);
 	gotoxylimit_line(x + 6, y - 3, "■", 2);
 	gotoxylimit(x + 16, y - 3, "■");

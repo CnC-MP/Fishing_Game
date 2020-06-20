@@ -39,7 +39,8 @@ void gamestart() {
 			
 		}
 		else if (enter_key == 13 && mainmenu_cursor.yPos == 2) { //종료하기
-
+			system("cls");
+			exit(1);
 		}
 	}
 }
@@ -49,11 +50,11 @@ void main_interface_cursor(cursor_location* loc) {
 }
 
 void main_interface_write02() {
-	gotoxy(71, 27);
+	gotoxy(71, 32);
 	printf("새로하기");
-	gotoxy(71, 29);
+	gotoxy(71, 34);
 	printf("이어하기");
-	gotoxy(71, 31);
+	gotoxy(71, 36);
 	printf("종료하기");
 }
 
@@ -63,7 +64,7 @@ void main_interface_cursor_write(cursor_location loc, int color) {
 	strcpy_s(temp_str[1], sizeof(char) * MAX_MAIN_INTERFACE_NAME_LEN + 1, "이어하기");
 	strcpy_s(temp_str[2], sizeof(char) * MAX_MAIN_INTERFACE_NAME_LEN + 1, "종료하기");
 	color_change(color);
-	gotoxy(mid_pos(MAX_MAIN_INTERFACE_NAME_LEN, 150), 27 + 2 * loc.yPos);
+	gotoxy(mid_pos(MAX_MAIN_INTERFACE_NAME_LEN, 150), 32 + 2 * loc.yPos);
 	printf("%s", temp_str[loc.yPos]);
 	color_change(7);
 }
