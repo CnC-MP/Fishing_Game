@@ -166,10 +166,15 @@ void stage_lock(int x) {
 	color_change(7);
 }
 
-/*void gamestart() {
-	// 플레이어 목숨
+void real_gamestart() {
+	while(true){
+		if (_kbhit) {
+
+		}
+	// 플레이어 목숨 3개 하트표시
 	// 몬스터 물고기 리젠 타임
 	// 몬스터 물고기 움직이는 속도
 	// 물고기 피격 판정
-	// 
-}*/
+	//
+	}
+}
