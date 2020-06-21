@@ -154,7 +154,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 	}
 	if (size == 8) {
-		if (to_right == 0) {  //size 6x4
+		if (to_right == 0) {  //size 5x4
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			gotoxylimit(x, y + 1, "¢º");

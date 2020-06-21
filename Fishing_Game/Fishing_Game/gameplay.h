@@ -7,6 +7,7 @@
 #include "player_fish_image.h"
 #include <cstring>
 #include "gotoxy_calc.h"
+#include "body_position_imformation_generate.h";
 
 #define MAX_MAIN_INTERFACE_NAME_LEN 8
 
@@ -19,12 +20,14 @@ void difficulty_interface_write(int clear_stage);
 void difficulty_interface();
 void main_interface_write02();
 void stage_lock(int x);
+void real_gamestart();
 
 void gamestart() {
 	xlimit = 148;
 	ylimit = 44;
 	hideCursor();
 	system("mode con:cols=150 lines=45");
+
 	cursor_location mainmenu_cursor;
 	mainmenu_cursor.xPos = 0;
 	mainmenu_cursor.yPos = 0;
@@ -120,6 +123,7 @@ void difficulty_interface() {
 			enter_key = 0;
 			while (true) {
 				system("cls");
+				real_gamestart();
 				// 난이도 하 게임 플레이
 			}
 		}
@@ -167,14 +171,83 @@ void stage_lock(int x) {
 }
 
 void real_gamestart() {
-	while(true){
-		if (_kbhit) {
+	int x = 71, y = 22, level = 1, temp;
+	bool direction_left = true;
+	int *** player_body_position_imformation;
+	int garow;
+	int serow;
 
+	int row_info[36] = {2, 2, 3, 3, 3, 4,
+						5, 5, 6, 6, 7, 8,
+						9, 9, 10, 10, 11, 12,
+						12, 13, 14, 15, 16, 17, 
+						17, 18, 19, 20, 21, 21,
+						22, 22, 23, 24, 25, 26};
+	int column_info[36] = {1, 1, 1, 2, 3, 3, 
+							3, 4, 4, 5, 5, 5,
+							5, 6, 6, 7, 7, 7,
+							8, 8, 8, 8, 8, 8,
+							9, 9, 9, 9, 9, 10,
+							10, 11, 11, 11, 11, 11};
+
+	player_body_position_imformation = new int** [36];
+	for (garow = 0; garow < 36; ++garow) {
+		player_body_position_imformation[garow] = new int * [row_info[garow]];
+		for (serow = 0; serow < row_info[garow]; ++serow) {
+			player_body_position_imformation[garow][serow] = new int [column_info[garow]];
 		}
+	} // player_body_postion_imformation [36][garow][serow]
+
+	while(true){
+		player_fish_image(level, direction_left, x, y, 11, 12, 13, 14, 15);
+		if (_kbhit()) {
+			temp = _getch();
+			switch (temp)
+			{
+			case 'a':
+			case 'A': 
+				direction_left = true;
+				x = x - 2;
+				break;
+
+			case 'd':
+			case 'D':
+				direction_left = false;
+				x = x + 2;
+				break;
+
+			case 's':
+			case 'S': 
+				y = y + 1;
+
+				break;
+
+			case 'w':
+			case 'W':
+				y = y - 1;
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+	for (garow = 0; garow < 36; ++garow)
+	{
+		for (serow = 0; serow < row_info[garow]; ++serow)
+		{
+			delete[] player_body_position_imformation[garow][serow];
+		}
+	}
+
+	for (garow = 0; garow < 36; ++garow)
+	{
+		delete[] player_body_position_imformation[garow];
+	}
+	delete[] player_body_position_imformation;
 	// 플레이어 목숨 3개 하트표시
 	// 몬스터 물고기 리젠 타임
 	// 몬스터 물고기 움직이는 속도
 	// 물고기 피격 판정
 	//
-	}
 }
