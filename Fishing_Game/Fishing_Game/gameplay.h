@@ -171,8 +171,8 @@ void stage_lock(int x) {
 }
 
 void real_gamestart() {
-	int x = 71, y = 22, level = 1, temp;
-	bool direction_left = true;
+	int x = 0, y = 0, level = 36, temp;
+	bool direction_left = false; // true   false
 	int *** player_body_position_imformation;
 	int garow;
 	int serow;

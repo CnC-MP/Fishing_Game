@@ -16,6 +16,7 @@ void gotoxylimit_line(int x, int y, const char c[3], int number) {
 void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, int fin_color, int tail_color, int body_color, int eye_color) {
 	if (size == 1) {		//size 2x1
 		if (to_right == 0) {
+			x += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			color_change(body_color);
@@ -31,6 +32,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 2) {	//size 2x1
 		if (to_right == 0) {
+			x += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			color_change(body_color);
@@ -46,6 +48,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 3) {	//size 3x1
 		if (to_right == 0) {
+			x += 4;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			color_change(body_color);
@@ -63,6 +66,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 4) {	//size 3x2
 		if (to_right == 0) {
+			x += 4;
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			color_change(body_color);
@@ -73,6 +78,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢¸");
 			color_change(body_color);
@@ -84,6 +90,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 5) {	//size 3x3
 		if (to_right == 0) {
+			x += 4;
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			color_change(body_color);
@@ -95,6 +103,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢¸");
 			color_change(body_color);
@@ -107,6 +116,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 6) {	//size 4x3
 		if (to_right == 0) {
+			x += 6;
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			color_change(body_color);
@@ -118,6 +129,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢¸");
 			color_change(body_color);
@@ -130,6 +142,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 7) {	//size 5x3
 		if (to_right == 0) {
+			x += 8;
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			color_change(body_color);
@@ -142,6 +156,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢¸");
 			color_change(body_color);
@@ -155,6 +170,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 8) {
 		if (to_right == 0) {  //size 5x4
+			x += 8;
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			gotoxylimit(x, y + 1, "¢º");
@@ -170,6 +187,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢¸");
 			gotoxylimit(x, y + 1, "¢¸");
@@ -186,6 +204,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 9) {	//size 6x4
 		if (to_right == 0) {
+			x += 10;
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			gotoxylimit(x, y + 1, "¢º");
@@ -201,6 +221,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 1;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢¸");
 			gotoxylimit(x, y + 1, "¢¸");
@@ -217,6 +238,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 10) {	//size 6x5
 		if (to_right == 0) {
+			x += 10;
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y - 1, "¢º");
 			gotoxylimit(x, y, "| ");
@@ -235,6 +258,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y - 1, "¢¸");
 			gotoxylimit(x, y, " |");
@@ -254,6 +278,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 11) {	 //size 7x5
 		if (to_right == 0) {
+			x += 12;
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y - 1, "¢º");
 			gotoxylimit(x, y, "| ");
@@ -274,6 +300,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y - 1, "¢¸");
 			gotoxylimit(x, y, " |");
@@ -295,6 +322,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 12) {	//size 8x5
 		if (to_right == 0) {
+			x += 14;
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y - 1, "¢º");
 			gotoxylimit(x, y, "| ");
@@ -316,6 +345,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y - 1, "¢¸");
 			gotoxylimit(x, y, " |");
@@ -338,6 +368,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 13) {	//size 9x5
 		if (to_right == 0) {
+			x += 16;
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y - 1, "¢º");
 			gotoxylimit(x, y, "| ");
@@ -359,6 +391,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y - 1, "¢¸");
 			gotoxylimit(x, y, " |");
@@ -381,6 +414,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 	if (size == 14) { //size 9x6
 		if (to_right == 0) {
+			x += 16;
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢º");
 			gotoxylimit(x, y + 1, "| ");
@@ -408,6 +443,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		else
 		{
+			y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x, y, "¢¸");
 			gotoxylimit(x, y + 1, " |");
@@ -436,6 +472,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 	}
 		if (size == 15) { //size 10x6
 			if (to_right == 0) {
+				x += 18;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x, y, "¢º");
 				gotoxylimit(x, y + 1, "| ");
@@ -463,6 +501,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x, y, "¢¸");
 				gotoxylimit(x, y + 1, " |");
@@ -491,6 +530,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 16) {	//size 10x7
 			if (to_right == 0) {
+				x += 18;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x, y, "¢º");
 				gotoxylimit(x, y + 1, "| ");
@@ -522,6 +563,7 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x, y, "¢¸");
 				gotoxylimit(x, y + 1, " |");
@@ -554,6 +596,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 17) {	//size 11x7
 			if (to_right == 0) {
+				x += 18;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 2, y, "¢º");
 				gotoxylimit(x + 2, y + 1, "| ");
@@ -585,6 +629,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 2;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 2, y, "¢¸");
 				gotoxylimit(x - 2, y + 1, " |");
@@ -617,6 +663,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 18) {	//size 12x7
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 2, y, "¢º");
 				gotoxylimit(x + 2, y + 1, "| ");
@@ -653,6 +701,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 2;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 2, y, "¢¸");
 				gotoxylimit(x - 2, y + 1, " |");
@@ -689,6 +739,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 19) {	//size 12x8
 			if (to_right == 0) {
+				x += 18;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 4, y, "¢º");
 				gotoxylimit(x + 4, y + 1, "| ");
@@ -729,6 +781,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 2;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 2, y, "¢¸");
 				gotoxylimit(x - 2, y + 1, " |");
@@ -770,6 +824,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 20) {	//size 13x8
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 4, y, "¢º");
 				gotoxylimit(x + 4, y + 1, "| ");
@@ -814,6 +870,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 2;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 2, y, "¢¸");
 				gotoxylimit(x - 2, y + 1, " |");
@@ -859,6 +917,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 21) {	//size 14x8
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 6, y, "¢º");
 				gotoxylimit(x + 6, y + 1, "| ");
@@ -903,6 +963,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 4;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 4, y, "¢¸");
 				gotoxylimit(x - 4, y + 1, " |");
@@ -948,6 +1010,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 22) {	//size 15X8
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 8, y, "¢º");
 				gotoxylimit(x + 8, y + 1, "| ");
@@ -992,6 +1056,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 6;
+				y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x - 6, y, "¢¸");
 			gotoxylimit(x - 6, y + 1, " |");
@@ -1037,6 +1103,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 23) {	//size 16x8
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 10, y, "¢º");
 				gotoxylimit(x + 10, y + 1, "| ");
@@ -1081,6 +1149,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 8;
+				y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x - 8, y, "¢¸");
 			gotoxylimit(x - 8, y + 1, " |");
@@ -1126,6 +1196,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 24) {	//size 17x8
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 12, y, "¢º");
 				gotoxylimit(x + 12, y + 1, "| ");
@@ -1170,6 +1242,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 10;
+				y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x - 10, y, "¢¸");
 			gotoxylimit(x - 10, y + 1, " |");
@@ -1215,6 +1289,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 25) {	//size 17x9
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 12, y + 1, "¢º");
 				gotoxylimit(x + 12, y + 2, "| ");
@@ -1261,6 +1337,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 10;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 10, y + 1, "¢¸");
 				gotoxylimit(x - 10, y + 2, " |");
@@ -1308,6 +1386,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 26) {	//size 18x9
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 14, y + 1, "¢º");
 				gotoxylimit(x + 14, y + 2, "| ");
@@ -1354,6 +1434,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 12;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 12, y + 1, "¢¸");
 				gotoxylimit(x - 12, y + 2, " |");
@@ -1401,6 +1483,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 27) {	//size 19x9
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 16, y + 1, "¢º");
 				gotoxylimit(x + 16, y + 2, "| ");
@@ -1447,6 +1531,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 14;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 14, y + 1, "¢¸");
 				gotoxylimit(x - 14, y + 2, " |");
@@ -1494,6 +1580,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 28) {	//size 20x9
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 18, y + 1, "¢º");
 				gotoxylimit(x + 18, y + 2, "| ");
@@ -1540,6 +1628,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 16;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 16, y + 1, "¢¸");
 				gotoxylimit(x - 16, y + 2, " |");
@@ -1587,6 +1677,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 29) {	//size 21x9
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 20, y + 1, "¢º");
 				gotoxylimit(x + 20, y + 2, "| ");
@@ -1633,6 +1725,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 18;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 18, y + 1, "¢¸");
 				gotoxylimit(x - 18, y + 2, " |");
@@ -1680,6 +1774,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 30) {	//size 21x10
 			if (to_right == 0) {
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 20, y + 1, "¢º");
 				gotoxylimit(x + 20, y + 2, "| ");
@@ -1734,6 +1830,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 18;
+				y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x - 18, y + 1, "¢¸");
 			gotoxylimit(x - 18, y + 2, " |");
@@ -1789,6 +1887,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 31) {	//size 22x10
 			if (to_right == 0) {
+				x += 22;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 20, y + 1, "¢º");
 				gotoxylimit(x + 20, y + 2, "| ");
@@ -1847,6 +1947,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 18;
+				y += 2;
 			color_change(mouth_color);
 			gotoxylimit(x - 18, y + 1, "¢¸");
 			gotoxylimit(x - 18, y + 2, " |");
@@ -1906,6 +2008,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 32) {	//size 22x11
 			if (to_right == 0) {
+				x += 22;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 20, y + 1, "¢º");
 				gotoxylimit(x + 20, y + 2, "| ");
@@ -1968,6 +2072,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 18;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 18, y + 1, "¢¸");
 				gotoxylimit(x - 18, y + 2, " |");
@@ -2031,6 +2137,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 33) {	//size 23x11
 			if (to_right == 0) {
+				x += 22;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 22, y + 1, "¢º");
 				gotoxylimit(x + 22, y + 2, "| ");
@@ -2093,6 +2201,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 20;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 20, y + 1, "¢¸");
 				gotoxylimit(x - 20, y + 2, " |");
@@ -2156,6 +2266,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 34) {	//size 24x11
 			if (to_right == 0) {
+				x += 22;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 24, y + 1, "¢º");
 				gotoxylimit(x + 24, y + 2, "| ");
@@ -2218,6 +2330,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 22;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 22, y + 1, "¢¸");
 				gotoxylimit(x - 22, y + 2, " |");
@@ -2281,6 +2395,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 35) {	//size 25x11
 			if (to_right == 0) {
+				x += 22;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 26, y + 1, "¢º");
 				gotoxylimit(x + 26, y + 2, "| ");
@@ -2345,6 +2461,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 22;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 22, y + 1, "¢¸");
 				gotoxylimit(x - 22, y + 2, " |");
@@ -2410,6 +2528,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 		}
 		if (size == 36) {	//size 26x11
 			if (to_right == 0) {
+				x += 24;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x + 26, y + 1, "¢º");
 				gotoxylimit(x + 26, y + 2, "| ");
@@ -2474,6 +2594,8 @@ void player_fish_image(int size, bool to_right, int x, int y, int mouth_color, i
 			}
 			else
 			{
+				x += 22;
+				y += 2;
 				color_change(mouth_color);
 				gotoxylimit(x - 22, y + 1, "¢¸");
 				gotoxylimit(x - 22, y + 2, " |");
