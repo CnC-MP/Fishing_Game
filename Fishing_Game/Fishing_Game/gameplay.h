@@ -8,6 +8,7 @@
 #include <cstring>
 #include "gotoxy_calc.h"
 #include "body_position_imformation_generate.h";
+#include "player_struct.h"
 
 #define MAX_MAIN_INTERFACE_NAME_LEN 8
 
@@ -21,6 +22,7 @@ void difficulty_interface();
 void main_interface_write02();
 void stage_lock(int x);
 void real_gamestart();
+void player_attack(int*** player_body_position_imformation, player_st *player, int x, int y);
 
 void gamestart() {
 	xlimit = 148;
@@ -171,60 +173,71 @@ void stage_lock(int x) {
 }
 
 void real_gamestart() {
-	int x = 0, y = 0, level = 1, temp;
-	bool direction_left = false; // true   false
-	int *** player_body_position_imformation;
+	int temp;
+	int*** player_body_position_imformation;
 	int garow;
 	int serow;
 
-	int row_info[36] = {2, 2, 3, 3, 3, 4,
+	int row_info[36] = { 2, 2, 3, 3, 3, 4,
 						5, 5, 6, 6, 7, 8,
 						9, 9, 10, 10, 11, 12,
-						12, 13, 14, 15, 16, 17, 
+						12, 13, 14, 15, 16, 17,
 						17, 18, 19, 20, 21, 21,
-						22, 22, 23, 24, 25, 26};
-	int column_info[36] = {1, 1, 1, 2, 3, 3, 
+						22, 22, 23, 24, 25, 26 };
+	int column_info[36] = { 1, 1, 1, 2, 3, 3,
 							3, 4, 4, 5, 5, 5,
 							5, 6, 6, 7, 7, 7,
 							8, 8, 8, 8, 8, 8,
 							9, 9, 9, 9, 9, 10,
-							10, 11, 11, 11, 11, 11};
+							10, 11, 11, 11, 11, 11 };
 
 	player_body_position_imformation = new int** [36];
 	for (garow = 0; garow < 36; ++garow) {
-		player_body_position_imformation[garow] = new int * [row_info[garow]];
+		player_body_position_imformation[garow] = new int* [row_info[garow]];
 		for (serow = 0; serow < row_info[garow]; ++serow) {
-			player_body_position_imformation[garow][serow] = new int [column_info[garow]];
+			player_body_position_imformation[garow][serow] = new int[column_info[garow]];
 		}
 	} // player_body_postion_imformation [36][garow][serow]
 
-	while(true){
-		player_fish_image(level, direction_left, x, y, 11, 12, 13, 14, 15);
+	player_st player;
+	player.xPos = 0;
+	player.yPos = 0;
+	player.direction = false;
+	player.size = 1;
+
+	player_body_position_imformation_generate(player_body_position_imformation);
+	player_attack(player_body_position_imformation, &player);
+
+	while (true) {
+		player_fish_image(player.size, player.direction, player.xPos, player.yPos, 11, 12, 13, 14, 15);
 		if (_kbhit()) {
 			temp = _getch();
 			switch (temp)
 			{
 			case 'a':
-			case 'A': 
-				direction_left = true;
-				x = x - 2;
+			case 'A':
+				player.direction = true;
+				player.xPos = player.xPos - 2;
 				break;
 
 			case 'd':
 			case 'D':
-				direction_left = false;
-				x = x + 2;
+				player.direction = false;
+				player.xPos = player.xPos + 2;
 				break;
 
 			case 's':
-			case 'S': 
-				y = y + 1;
-
+			case 'S':
+				player.yPos = player.yPos + 1;
 				break;
 
 			case 'w':
 			case 'W':
-				y = y - 1;
+				player.yPos = player.yPos - 1;
+				break;
+
+			case ' ':
+				player_attack(player_body_position_imformation, &player);
 				break;
 
 			default:
@@ -250,4 +263,21 @@ void real_gamestart() {
 	// 몬스터 물고기 움직이는 속도
 	// 물고기 피격 판정
 	//
+}
+
+void player_attack(int*** player_body_position_imformation, player_st* player) {
+	int player_mouth_num = 0;
+	for (int i = 0; i < player->row; ++i) {
+		for (int j = 0; j < player->column; ++j) {
+			if (player_body_position_imformation[player->size][i][j] == 2) {
+				++player_mouth_num;
+			}
+		}
+	}
+	for (int h = 0; h < player_mouth_num; ++h) {
+		//백터 
+	}
+	if (/* monster->size*/ < player->size) {
+
+	}
 }

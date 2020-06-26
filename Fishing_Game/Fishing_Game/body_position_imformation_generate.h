@@ -2,9 +2,9 @@
 
 #include <cstdio>
 
-void player_body_position_imformation_generate(int*** player_body_position_imformation, int* row_info, int* column_info);
+void player_body_position_imformation_generate(int*** player_body_position_imformation);
 
-void player_body_position_imformation_generate(int*** player_body_position_imformation, int* row_info, int* column_info) {
+void player_body_position_imformation_generate(int*** player_body_position_imformation) {
 	player_body_position_imformation[0][0][0] = 1;
 	player_body_position_imformation[0][1][0] = 2;
 

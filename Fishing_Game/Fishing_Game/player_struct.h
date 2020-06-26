@@ -5,7 +5,11 @@
 typedef struct Player_st {
 	int heart;
 	int size;
-
+	int row;
+	int column;
+	int xPos;
+	int yPos;
+	bool direction;
 }player_st;
 
 /*
