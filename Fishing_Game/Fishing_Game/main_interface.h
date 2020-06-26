@@ -22,6 +22,7 @@ void main_interface_write() {
 	printf("Enter키를   누르시오.\n");
 }
 void main_interface_image(int color1, int color2, int color3, int color4, int color5) {
+	printf("안쪽");
 	color_change(color1);  //4: 빨간색 6: 노란색 0: 검은색 12: 연한 빨간색
 	int x = 0, y = 0;
 	y += 5;
@@ -124,4 +125,6 @@ void main_interface_image(int color1, int color2, int color3, int color4, int co
 	gotoxylimit_line(x + 28, y - 4, "▲", 2);
 	gotoxylimit_line(x + 12, y + 5, "▼", 1);
 	gotoxylimit_line(x + 14, y + 6, "▼", 9);
+	color_change(7);
+	printf("끝쪽");
 }
