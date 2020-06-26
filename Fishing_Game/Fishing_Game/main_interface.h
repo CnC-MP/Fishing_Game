@@ -113,4 +113,5 @@ void main_interface_image(int color1, int color2, int color3, int color4, int co
 	gotoxylimit_line(x + 28, y - 4, "¡ã", 2);
 	gotoxylimit_line(x + 12, y + 5, "¡å", 1);
 	gotoxylimit_line(x + 14, y + 6, "¡å", 9);
+	color_change(7);
 }

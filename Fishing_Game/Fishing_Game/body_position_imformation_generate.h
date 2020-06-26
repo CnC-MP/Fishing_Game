@@ -3,6 +3,7 @@
 #include <cstdio>
 
 void player_body_position_imformation_generate(int*** player_body_position_imformation);
+void monster_body_position_imformation_generate(int monster_kind_num, int**** monster_body_position_imformation, int** row_info, int** column_info);
 
 void player_body_position_imformation_generate(int*** player_body_position_imformation) {
 	player_body_position_imformation[0][0][0] = 1;

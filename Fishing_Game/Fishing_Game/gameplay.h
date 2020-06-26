@@ -11,6 +11,7 @@
 #include "player_struct.h"
 
 #define MAX_MAIN_INTERFACE_NAME_LEN 8
+#define MONSTER_KIND_NUM 2
 
 void gamestart();
 void main_interface_cursor(cursor_location* loc);
@@ -22,7 +23,7 @@ void difficulty_interface();
 void main_interface_write02();
 void stage_lock(int x);
 void real_gamestart();
-void player_attack(int*** player_body_position_imformation, player_st *player, int x, int y);
+void player_attack(int*** player_body_position_imformation, player_st *player);
 
 void gamestart() {
 	xlimit = 148;
@@ -123,30 +124,24 @@ void difficulty_interface() {
 		difficulty_interface_cursor(&difficulty_cursor, clear_stage);
 		if (enter_key == 13 && difficulty_cursor.xPos == 0) { // 하
 			enter_key = 0;
-			while (true) {
-				system("cls");
-				real_gamestart();
-				// 난이도 하 게임 플레이
-			}
+			system("cls");
+			// 난이도 하 게임 정보 업로드
 		}
 		else if (enter_key == 13 && difficulty_cursor.xPos == 1) { // 중
 			enter_key = 0;
-			while (true) {
-				system("cls");
-				// 난이도 중 게임 플레이
-			}
+			system("cls");
+			// 난이도 중 게임 정보 업로드
 		}
 		else if (enter_key == 13 && difficulty_cursor.xPos == 2) { // 상
 			enter_key = 0;
-			while (true) {
-				system("cls");
-				// 난이도 상 게임 플레이
-			}
+			system("cls");
+			// 난이도 상 게임 정보 업로드
 		}
 		else if (close_key == 8) {
 			close_key = 0;
 			break;
 		}
+		real_gamestart();
 	}
 }
 
@@ -173,8 +168,9 @@ void stage_lock(int x) {
 }
 
 void real_gamestart() {
-	int temp;
-	int*** player_body_position_imformation;
+	int temp; 
+	int *** player_body_position_imformation;
+	int **** monster_body_position_imformation;
 	int garow;
 	int serow;
 
@@ -184,12 +180,19 @@ void real_gamestart() {
 						12, 13, 14, 15, 16, 17,
 						17, 18, 19, 20, 21, 21,
 						22, 22, 23, 24, 25, 26 };
-	int column_info[36] = { 1, 1, 1, 2, 3, 3,
+	int column_info[36] = {	1, 1, 1, 2, 3, 3, 
 							3, 4, 4, 5, 5, 5,
 							5, 6, 6, 7, 7, 7,
 							8, 8, 8, 8, 8, 8,
 							9, 9, 9, 9, 9, 10,
 							10, 11, 11, 11, 11, 11 };
+
+	int monster_row_info[MONSTER_KIND_NUM][36] = { {}, 
+													{} };
+	int monster_column_info[MONSTER_KIND_NUM][36] = {	{},
+														{} };
+
+
 
 	player_body_position_imformation = new int** [36];
 	for (garow = 0; garow < 36; ++garow) {
@@ -198,6 +201,17 @@ void real_gamestart() {
 			player_body_position_imformation[garow][serow] = new int[column_info[garow]];
 		}
 	} // player_body_postion_imformation [36][garow][serow]
+
+	monster_body_position_imformation = new int*** [MONSTER_KIND_NUM];
+	for (int i = 0; i < MONSTER_KIND_NUM; ++i) {
+		monster_body_position_imformation[i] = new int** [36];
+		for (garow = 0; garow < 36; ++garow) {
+			monster_body_position_imformation[i][garow] = new int* [monster_row_info[i][garow]];
+			for (serow = 0; serow < monster_row_info[i][garow]; ++serow) {
+				monster_body_position_imformation[i][garow][serow] = new int[monster_column_info[i][garow]];
+			}
+		}
+	}
 
 	player_st player;
 	player.xPos = 0;
@@ -245,19 +259,34 @@ void real_gamestart() {
 			}
 		}
 	}
-	for (garow = 0; garow < 36; ++garow)
-	{
-		for (serow = 0; serow < row_info[garow]; ++serow)
-		{
+
+	for (garow = 0; garow < 36; ++garow) {
+		for (serow = 0; serow < row_info[garow]; ++serow) {
 			delete[] player_body_position_imformation[garow][serow];
 		}
 	}
-
-	for (garow = 0; garow < 36; ++garow)
-	{
+	for (garow = 0; garow < 36; ++garow) {
 		delete[] player_body_position_imformation[garow];
 	}
 	delete[] player_body_position_imformation;
+
+	for (int i = 0; i < MONSTER_KIND_NUM; ++i) {
+		for (garow = 0; garow < 36; ++garow) {
+			for (serow = 0; serow < monster_row_info[i][garow]; ++serow) {
+				delete[] monster_body_position_imformation[i][garow][serow];
+			}
+		}
+	}
+	for (int i = 0; i < MONSTER_KIND_NUM; ++i) {
+		for (garow = 0; garow < 36; ++garow) {
+			delete[] monster_body_position_imformation[i][garow];
+		}
+	}
+	for (int i = 0; i < MONSTER_KIND_NUM; ++i) {
+		delete[] monster_body_position_imformation[i];
+	}
+	delete[] monster_body_position_imformation;
+
 	// 플레이어 목숨 3개 하트표시
 	// 몬스터 물고기 리젠 타임
 	// 몬스터 물고기 움직이는 속도
@@ -277,7 +306,7 @@ void player_attack(int*** player_body_position_imformation, player_st* player) {
 	for (int h = 0; h < player_mouth_num; ++h) {
 		//백터 
 	}
-	if (/* monster->size*/ < player->size) {
+	/*if ( monster->size < player->size) {
 
-	}
+	}*/
 }
