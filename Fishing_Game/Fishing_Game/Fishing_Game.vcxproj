@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="body_position_imformation_generate.h" />
     <ClInclude Include="cursor_status.h" />
     <ClInclude Include="gameplay.h" />
     <ClInclude Include="gotoxy_calc.h" />

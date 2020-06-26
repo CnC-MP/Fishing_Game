@@ -13,7 +13,6 @@ int temp2_interface_design_fuction = 0;
 int xlimit;
 int ylimit;
 
-
 int wsleep(int* milliseconds, int* result);
 void gotoxy(int x, int y); //커서를 x, y 좌표로 이동
 void gotoxylimit(int x, int y, const char e[3]); //커서를 x, y 좌표로 이동
