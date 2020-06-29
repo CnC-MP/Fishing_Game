@@ -3,12 +3,14 @@
 #include "main_interface.h"
 #include "cursor_status.h"
 #include <conio.h>
+#include <vector>
 #include "interface_design_tool.h"
 #include "player_fish_image.h"
 #include <cstring>
 #include "gotoxy_calc.h"
 #include "body_position_information_generate.h";
 #include "player_struct.h"
+#include "player_location.h"
 
 #define MAX_MAIN_INTERFACE_NAME_LEN 8
 #define MONSTER_KIND_NUM 2
@@ -295,18 +297,27 @@ void real_gamestart() {
 }
 
 void player_attack(int*** player_body_position_information, player_st* player) {
+
+	std::vector<location> player_mouth_location;
+
 	int player_mouth_num = 0;
+
 	for (int i = 0; i < player->row; ++i) {
 		for (int j = 0; j < player->column; ++j) {
-			if (player_body_position_information[player->size][i][j] == 2) {
+			if (player_body_position_information[player->size - 1][i][j] == 2) {
 				++player_mouth_num;
+				location temp_location;
+				temp_location.xLoc = i + player->xPos;
+				temp_location.yLoc = j + player->yPos;
+				player_mouth_location.push_back(temp_location);
 			}
 		}
 	}
-	for (int h = 0; h < player_mouth_num; ++h) {
+	/*for (int h = 0; h < player_mouth_num; ++h) {
+		
 		//vector, array 
 	}
-	/*if ( monster->size < player->size) {
+	if ( monster->size < player->size) {
 
 	}*/
 }

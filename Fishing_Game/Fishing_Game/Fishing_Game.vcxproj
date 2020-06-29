@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="body_position_imformation_generate.h" />
+    <ClInclude Include="body_position_information_generate.h" />
     <ClInclude Include="cursor_status.h" />
     <ClInclude Include="gameplay.h" />
     <ClInclude Include="gotoxy_calc.h" />
@@ -132,6 +132,7 @@
     <ClInclude Include="main_interface.h" />
     <ClInclude Include="monster_fish_image.h" />
     <ClInclude Include="player_fish_image.h" />
+    <ClInclude Include="player_location.h" />
     <ClInclude Include="player_struct.h" />
   </ItemGroup>
   <ItemGroup>
