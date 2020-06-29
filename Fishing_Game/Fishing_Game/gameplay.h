@@ -7,7 +7,7 @@
 #include "player_fish_image.h"
 #include <cstring>
 #include "gotoxy_calc.h"
-#include "body_position_imformation_generate.h";
+#include "body_position_information_generate.h";
 #include "player_struct.h"
 
 #define MAX_MAIN_INTERFACE_NAME_LEN 8
@@ -23,7 +23,7 @@ void difficulty_interface();
 void main_interface_write02();
 void stage_lock(int x);
 void real_gamestart();
-void player_attack(int*** player_body_position_imformation, player_st *player);
+void player_attack(int*** player_body_position_information, player_st *player);
 
 void gamestart() {
 	xlimit = 148;
@@ -169,8 +169,8 @@ void stage_lock(int x) {
 
 void real_gamestart() {
 	int temp; 
-	int *** player_body_position_imformation;
-	int **** monster_body_position_imformation;
+	int *** player_body_position_information;
+	int **** monster_body_position_information;
 	int garow;
 	int serow;
 
@@ -194,21 +194,21 @@ void real_gamestart() {
 
 
 
-	player_body_position_imformation = new int** [36];
+	player_body_position_information = new int** [36];
 	for (garow = 0; garow < 36; ++garow) {
-		player_body_position_imformation[garow] = new int* [row_info[garow]];
+		player_body_position_information[garow] = new int* [row_info[garow]];
 		for (serow = 0; serow < row_info[garow]; ++serow) {
-			player_body_position_imformation[garow][serow] = new int[column_info[garow]];
+			player_body_position_information[garow][serow] = new int[column_info[garow]];
 		}
-	} // player_body_postion_imformation [36][garow][serow]
+	} // player_body_postion_information [36][garow][serow]
 
-	monster_body_position_imformation = new int*** [MONSTER_KIND_NUM];
+	monster_body_position_information = new int*** [MONSTER_KIND_NUM];
 	for (int i = 0; i < MONSTER_KIND_NUM; ++i) {
-		monster_body_position_imformation[i] = new int** [36];
+		monster_body_position_information[i] = new int** [36];
 		for (garow = 0; garow < 36; ++garow) {
-			monster_body_position_imformation[i][garow] = new int* [monster_row_info[i][garow]];
+			monster_body_position_information[i][garow] = new int* [monster_row_info[i][garow]];
 			for (serow = 0; serow < monster_row_info[i][garow]; ++serow) {
-				monster_body_position_imformation[i][garow][serow] = new int[monster_column_info[i][garow]];
+				monster_body_position_information[i][garow][serow] = new int[monster_column_info[i][garow]];
 			}
 		}
 	}
@@ -219,8 +219,8 @@ void real_gamestart() {
 	player.direction = false;
 	player.size = 1;
 
-	player_body_position_imformation_generate(player_body_position_imformation);
-	player_attack(player_body_position_imformation, &player);
+	player_body_position_information_generate(player_body_position_information);
+	player_attack(player_body_position_information, &player);
 
 	while (true) {
 		player_fish_image(player.size, player.direction, player.xPos, player.yPos, 11, 12, 13, 14, 15);
@@ -251,7 +251,7 @@ void real_gamestart() {
 				break;
 
 			case ' ':
-				player_attack(player_body_position_imformation, &player);
+				player_attack(player_body_position_information, &player);
 				break;
 
 			default:
@@ -262,30 +262,30 @@ void real_gamestart() {
 
 	for (garow = 0; garow < 36; ++garow) {
 		for (serow = 0; serow < row_info[garow]; ++serow) {
-			delete[] player_body_position_imformation[garow][serow];
+			delete[] player_body_position_information[garow][serow];
 		}
 	}
 	for (garow = 0; garow < 36; ++garow) {
-		delete[] player_body_position_imformation[garow];
+		delete[] player_body_position_information[garow];
 	}
-	delete[] player_body_position_imformation;
+	delete[] player_body_position_information;
 
 	for (int i = 0; i < MONSTER_KIND_NUM; ++i) {
 		for (garow = 0; garow < 36; ++garow) {
 			for (serow = 0; serow < monster_row_info[i][garow]; ++serow) {
-				delete[] monster_body_position_imformation[i][garow][serow];
+				delete[] monster_body_position_information[i][garow][serow];
 			}
 		}
 	}
 	for (int i = 0; i < MONSTER_KIND_NUM; ++i) {
 		for (garow = 0; garow < 36; ++garow) {
-			delete[] monster_body_position_imformation[i][garow];
+			delete[] monster_body_position_information[i][garow];
 		}
 	}
 	for (int i = 0; i < MONSTER_KIND_NUM; ++i) {
-		delete[] monster_body_position_imformation[i];
+		delete[] monster_body_position_information[i];
 	}
-	delete[] monster_body_position_imformation;
+	delete[] monster_body_position_information;
 
 	// 플레이어 목숨 3개 하트표시
 	// 몬스터 물고기 리젠 타임
@@ -294,17 +294,17 @@ void real_gamestart() {
 	//
 }
 
-void player_attack(int*** player_body_position_imformation, player_st* player) {
+void player_attack(int*** player_body_position_information, player_st* player) {
 	int player_mouth_num = 0;
 	for (int i = 0; i < player->row; ++i) {
 		for (int j = 0; j < player->column; ++j) {
-			if (player_body_position_imformation[player->size][i][j] == 2) {
+			if (player_body_position_information[player->size][i][j] == 2) {
 				++player_mouth_num;
 			}
 		}
 	}
 	for (int h = 0; h < player_mouth_num; ++h) {
-		//백터 
+		//vector, array 
 	}
 	/*if ( monster->size < player->size) {
 
